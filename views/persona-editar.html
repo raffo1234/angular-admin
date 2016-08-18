@@ -1,0 +1,88 @@
+
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main">
+    <aside id="sidebar" data-ng-include="'template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+
+    <aside id="chat" data-ng-include="'template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
+
+    <section id="content" data-ng-controller="peopleEditCtrl as vm">
+
+        <div class="container">
+            <div class="block-header">
+                
+                <h2>
+                    <a ui-sref="personas.personas({lang: vm.lang}) " class="button">
+                        <i class="zmdi zmdi-arrow-back"></i> PERSONAS
+                    </a>
+                </h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header card-padding">
+                    <ul class="top-menu ">
+                        <li class="dropdown" uib-dropdown>
+                            <a uib-dropdown-toggle class="btn-dark">
+                                <i class="tm-icon zmdi zmdi-globe"></i>
+                            </a>
+                            <ul class="dropdown-menu dm-icon pull-left">
+                                <li class="hidden-xs">
+                                    <a class="" ui-sref="personas.editar({lang: 'es', id: vm.id})">Español</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="personas.editar({lang: 'en', id: vm.id})">Inglés</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="personas.editar({lang: 'it', id: vm.id})">Italiano</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body card-padding">
+                    <form ng-submit="editar(vm.data);">
+                        
+                        <p class="f-500 c-black m-b-20">Nombre</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.firstname' class="form-control input-sm" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <p class="f-500 c-black m-b-20">Apellido</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.lastname' class="form-control input-sm" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                
+                        <p class="f-500 c-black m-b-20">Resúmen</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.excerpt' class="form-control input-sm" placeholder="Resúmen">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+
+                        
+                        <p class="f-500 c-black m-b-20">Contenido</p>
+                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea>
+                        
+                        <br>
+                        <br>
+                        <button class="btn btn-primary btn-lg waves-effect">GUARDAR</button>
+                    </form> 
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>
+
+<footer id="footer" data-ng-include="'template/footer.html'"></footer>

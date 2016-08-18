@@ -1,0 +1,105 @@
+
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main">
+    <aside id="sidebar" data-ng-include="'template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+
+    <aside id="chat" data-ng-include="'template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
+
+    <section id="content" data-ng-controller="newEditCtrl as vm">
+
+        <div class="container">
+            <div class="block-header">
+                
+                <h2>
+                    <a ui-sref="noticias.noticias({lang: vm.lang}) " class="button">
+                        <i class="zmdi zmdi-arrow-back"></i> NOTICIAS
+                    </a>
+                </h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header card-padding">
+                    <ul class="top-menu ">
+                        <li class="dropdown" uib-dropdown>
+                            <a uib-dropdown-toggle class="btn-dark">
+                                <i class="tm-icon zmdi zmdi-globe"></i>
+                            </a>
+                            <ul class="dropdown-menu dm-icon pull-left">
+                                <li class="hidden-xs">
+                                    <a class="" ui-sref="noticias.editar({lang: 'es', id: vm.id})">Español</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="noticias.editar({lang: 'en', id: vm.id})">Inglés</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="noticias.editar({lang: 'it', id: vm.id})">Italiano</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body card-padding">
+                    <form ng-submit="editar(vm.data);">
+                        
+                        <p class="f-500 c-black m-b-20">Título</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.title' class="form-control input-sm" placeholder="Título">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                          
+                        <p class="f-500 c-black m-b-20">Fecha de creación (se muestra en el app)</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.date_created' class="form-control input-sm" placeholder="Fecha">
+                            </div>
+                        </div>
+            
+                        <br>
+                        <br>
+                        <p class="f-500 c-black m-b-20">Resumen</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <input type="text" ng-model='vm.data.excerpt' class="form-control input-sm" placeholder="Resumen">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <!-- <br> -->
+                        <!-- <p class="f-500 c-black m-b-20">Imagen</p>
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                            <div>
+                                <span class="btn btn-info btn-file">
+                                    <span class="fileinput-new">Select image</span>
+                                    <span class="fileinput-exists">Change</span>
+                                    <input type="file" name="..." ng-model="vm.data.image">
+                                </span>
+                                <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+                            </div>
+                        </div> -->
+                        <!-- <br/>
+                        <br/>
+                        <p><em>Imagen previa solo funciona en IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+.</em></p> -->
+
+                        
+                        <p class="f-500 c-black m-b-20">Contenido</p>
+                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea>
+                        
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-lg waves-effect">GUARDAR</button>
+                        
+                    </form> 
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>
+
+<footer id="footer" data-ng-include="'template/footer.html'"></footer>
