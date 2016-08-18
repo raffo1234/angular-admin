@@ -1,6 +1,23 @@
 materialAdmin
 
     // =========================================================================
+    // Service multipartForm
+    // =========================================================================
+    .service('multipartForm', ['$http', function($http){
+        this.post = function(uploadUrl, data){
+            var fd = new FormData();
+            for(var key in data){
+                fd.append(key, data[key]);
+            }
+            $http.post(uploadUrl, fd, {
+                transformRequest: angular.indentity,
+                headers: {'Content-Type': undefined}
+            })
+        };
+    }
+    ])
+
+    // =========================================================================
     // Service HttpRequest
     // =========================================================================
 
@@ -33,7 +50,7 @@ materialAdmin
     .service('messageService', ['$resource', function($resource){
         this.getMessage = function(img, user, text) {
             var gmList = $resource("data/messages-notifications.json");
-            
+
             return gmList.get({
                 img: img,
                 user: user,
@@ -41,7 +58,7 @@ materialAdmin
             });
         }
     }])
-    
+
 
     // =========================================================================
     // Best Selling Widget Data (Home Page)
@@ -50,7 +67,7 @@ materialAdmin
     .service('bestsellingService', ['$resource', function($resource){
         this.getBestselling = function(img, name, range) {
             var gbList = $resource("data/best-selling.json");
-            
+
             return gbList.get({
                 img: img,
                 name: name,
@@ -59,7 +76,7 @@ materialAdmin
         }
     }])
 
-    
+
     // =========================================================================
     // Todo List Widget Data
     // =========================================================================
@@ -67,7 +84,7 @@ materialAdmin
     .service('todoService', ['$resource', function($resource){
         this.getTodo = function(todo) {
             var todoList = $resource("data/todo.json");
-            
+
             return todoList.get({
                 todo: todo
             });
@@ -78,11 +95,11 @@ materialAdmin
     // =========================================================================
     // Recent Items Widget Data
     // =========================================================================
-    
+
     .service('recentitemService', ['$resource', function($resource){
         this.getRecentitem = function(id, name, price) {
             var recentitemList = $resource("data/recent-items.json");
-            
+
             return recentitemList.get ({
                 id: id,
                 name: name,

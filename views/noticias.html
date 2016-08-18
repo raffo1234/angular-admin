@@ -34,7 +34,9 @@
             <tr ng-repeat="item in $data">
               <td title="Título" data-title="'Título'" filter="{ 'title': 'text' }">
                 {{item.title}}</td>
-              <td title="Año" data-title="'Fecha de creación (se muestra en el app)'" filter="{ 'date_created': 'text' }">
+              <td title="Fecha" data-title="'Fecha de la noticias (se muestra en el app)'" filter="{ 'date': 'text' }">
+                {{item.date}}</td>
+                <td title="Año" data-title="'Fecha de creación'" filter="{ 'date_created': 'text' }">
                 {{item.date_created}}</td>
               <td title="'Fecha de modificación'" data-title="'Fecha de modificación'" filter="{ 'lastModified': 'text' }">
                 {{item.lastModified}}</td>
