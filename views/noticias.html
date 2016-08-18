@@ -1,79 +1,70 @@
-
-<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl"></header>
-
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl">
+</header>
 <section id="main">
-    <aside id="sidebar" data-ng-include="'template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
-
-    <aside id="chat" data-ng-include="'template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
-
-    <section id="content" data-ng-controller="newsCtrl as vm">
-
-        <div class="container">
-            <div class="block-header">
-                
-                <h2>NOTICIAS</h2>
-                    
-            </div>
-
-            <div class="card">
-                <div class="card-header card-padding">
-                    <ul class="top-menu ">
-                        <li class="dropdown" uib-dropdown>
-                            <a uib-dropdown-toggle class="btn-dark">
-                                <i class="tm-icon zmdi zmdi-globe"></i>
-                            </a>
-                            <ul class="dropdown-menu dm-icon pull-left">
-                                <li class="hidden-xs">
-                                    <a class="" ui-sref="noticias.noticias({lang: 'es'})">Español</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="noticias.noticias({lang: 'en'})">Inglés</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="noticias.noticias({lang: 'it'})">Italiano</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <table ng-table="vm.tablenews" class="table table-striped table-vmiddle" show-filter="true">
-                        <tr ng-repeat="item in $data">
-                            <td title="Título" data-title="'Título'" filter="{ 'title': 'text' }">
-                                {{item.title}}</td>
-                            <td title="Año" data-title="'Fecha de creación (se muestra en el app)'" filter="{ 'date_created': 'text' }">
-                                {{item.date_created}}</td>
-                            <td title="'Fecha de modificación'" data-title="'Fecha de modificación'" filter="{ 'lastModified': 'text' }">
-                                {{item.lastModified}}</td>
-                            <td title="'Eliminado'" data-title="'Eliminado'" filter="{ 'deleted': 'text' }">
-                                {{item.deleted}}</td>
-                            <td title="'Acciones'">
-                                <ul class="top-menu ">
-                                    <li class="dropdown" uib-dropdown>
-                                        <a uib-dropdown-toggle >
-                                            <i class="tm-icon zmdi zmdi-more-vert"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dm-icon pull-right">
-                                            <li >
-                                                <a data-ng-click="" ui-sref="noticias.editar({lang: vm.lang, id: item.id})"><i class="zmdi zmdi-edit"></i> Editar</a>
-                                            </li>
-                                            <li>
-                                                <a data-ng-click="eliminar(item.id)" href=""><i class="zmdi zmdi-delete"></i> Eliminar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>    
-                </div>
-                <div class="card-body card-padding">
-                    <button ng-click="agregar()" class="btn btn-primary btn-lg waves-effect">AGREGAR</button>    
-                </div>
-            </div>
-
+  <aside id="sidebar" data-ng-include="'template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+  <aside id="chat" data-ng-include="'template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside>
+  <section id="content" data-ng-controller="newsCtrl as vm">
+    <div class="container">
+      <div class="block-header">
+        <h2>NOTICIAS</h2>
+      </div>
+      <div class="card">
+        <div class="card-header card-padding">
+          <ul class="top-menu ">
+            <li class="dropdown" uib-dropdown>
+              <a uib-dropdown-toggle class="btn-dark">
+                <i class="tm-icon zmdi zmdi-globe"></i>
+              </a>
+              <ul class="dropdown-menu dm-icon pull-left">
+                <li class="hidden-xs">
+                  <a class="" ui-sref="noticias.noticias({lang: 'es'})">Español</a>
+                </li>
+                <li>
+                  <a ui-sref="noticias.noticias({lang: 'en'})">Inglés</a>
+                </li>
+                <li>
+                  <a ui-sref="noticias.noticias({lang: 'it'})">Italiano</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
-    </section>
+        <div class="card-body">
+          <table ng-table="vm.tablenews" class="table table-striped table-vmiddle" show-filter="true">
+            <tr ng-repeat="item in $data">
+              <td title="Título" data-title="'Título'" filter="{ 'title': 'text' }">
+                {{item.title}}</td>
+              <td title="Año" data-title="'Fecha de creación (se muestra en el app)'" filter="{ 'date_created': 'text' }">
+                {{item.date_created}}</td>
+              <td title="'Fecha de modificación'" data-title="'Fecha de modificación'" filter="{ 'lastModified': 'text' }">
+                {{item.lastModified}}</td>
+              <td title="'Eliminado'" data-title="'Eliminado'" filter="{ 'deleted': 'text' }">
+                {{item.deleted}}</td>
+              <td title="'Acciones'">
+                <ul class="top-menu ">
+                  <li class="dropdown" uib-dropdown>
+                    <a uib-dropdown-toggle>
+                      <i class="tm-icon zmdi zmdi-more-vert"></i>
+                    </a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                      <li>
+                        <a data-ng-click="" ui-sref="noticias.editar({lang: vm.lang, id: item.id})"><i class="zmdi zmdi-edit"></i> Editar</a>
+                      </li>
+                      <li>
+                        <a data-ng-click="eliminar(item.id)" href=""><i class="zmdi zmdi-delete"></i> Eliminar</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="card-body card-padding">
+          <button ng-click="agregar()" class="btn btn-primary btn-lg waves-effect">AGREGAR</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
-
 <footer id="footer" data-ng-include="'template/footer.html'"></footer>
