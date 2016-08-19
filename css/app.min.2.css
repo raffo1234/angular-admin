@@ -71,7 +71,6 @@
     filter: alpha(opacity=0);
     z-index: 1;
   }
-
   #messages-main .ms-menu.toggled {
     -webkit-transform: translate3d(0, 58px, 0);
     transform: translate3d(0, 58px, 0);
@@ -158,6 +157,7 @@
 #ms-menu-trigger .line-wrap .line {
   background-color: #717171;
 }
+
 
 /*
  * For Message
@@ -303,7 +303,6 @@
     height: 260px;
     margin-top: -130px;
   }
-
   .four-zero h2 {
     font-size: 90px;
   }
@@ -625,7 +624,6 @@ body.login-content:before {
     opacity: 0;
     filter: alpha(opacity=0);
   }
-
   #profile-main .pmo-pic .pmop-edit i {
     margin-right: 4px;
   }
@@ -767,7 +765,6 @@ body.login-content:before {
     background: #edecec;
     box-shadow: none;
   }
-
   .c-timeline .tab-nav {
     background: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
@@ -1010,7 +1007,6 @@ body.login-content:before {
     margin: 20px 2px 30px;
     display: block;
   }
-
   .p-menu .pm-search input[type="text"] {
     width: 100%;
     border: 1px solid #ccc;
@@ -1054,7 +1050,6 @@ body.login-content:before {
     -webkit-transition-duration: 300ms;
     transition-duration: 300ms;
   }
-
   .p-menu .pms-inner input[type="text"]:focus {
     border-color: #DFDFDF;
     width: 200px;
@@ -1313,6 +1308,7 @@ body.login-content:before {
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 /*
  * Block Header
  * Used for Heading outside the Cards.
@@ -1359,6 +1355,7 @@ body.login-content:before {
   z-index: 4;
 }
 
+
 /*
  * Header Actions
  */
@@ -1400,7 +1397,6 @@ body.login-content:before {
   .actions > a {
     position: relative;
   }
-
   .actions > li > a:before,
   .actions > a:before {
     left: 0;
@@ -1428,7 +1424,6 @@ body.login-content:before {
     opacity: 0;
     filter: alpha(opacity=0);
   }
-
   .actions > li > a:hover:before,
   .actions > a:hover:before,
   .actions > li > a.open:before,
@@ -1473,6 +1468,7 @@ body.login-content:before {
 .actions.open {
   z-index: 3;
 }
+
 
 /*
  * Collapse Menu Icons
@@ -1521,6 +1517,7 @@ body.login-content:before {
   transform: translateX(8px) translateY(-1px) rotate(-45deg);
   -webkit-transform: translateX(8px) translateY(-1px) rotate(-45deg);
 }
+
 
 /*
  * Load More
@@ -1605,6 +1602,7 @@ body.login-content:before {
   background-color: #eee;
 }
 
+
 /*
  * Animation
  */
@@ -1616,14 +1614,12 @@ body.login-content:before {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -1639,14 +1635,12 @@ body.login-content:before {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -1662,14 +1656,12 @@ body.login-content:before {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -1685,14 +1677,12 @@ body.login-content:before {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   50% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -1700,6 +1690,7 @@ body.login-content:before {
     transform: rotate(360deg);
   }
 }
+
 
 /* Make clicks pass-through */
 
@@ -1746,6 +1737,7 @@ body.login-content:before {
   border-bottom-right-radius: 1px;
   border-top-right-radius: 1px;
 }
+
 
 /* Fancy blur effect */
 
@@ -2160,7 +2152,7 @@ body.login-content:before {
 .wall-img-preview .wip-item:first-child:nth-last-child(4),
 .wall-img-preview .wip-item:first-child:nth-last-child(4) ~ div:not(:last-child),
 .wall-img-preview .wip-item:first-child:nth-last-child(5),
-.wall-img-preview .wip-item:first-child:nth-last-child(5) ~ div:not( :nth-last-of-type(-n+2)),
+.wall-img-preview .wip-item:first-child:nth-last-child(5) ~ div:not(:nth-last-of-type(-n+2)),
 .wall-img-preview .wip-item:first-child:nth-last-child(6),
 .wall-img-preview .wip-item:first-child:nth-last-child(6) ~ div,
 .wall-img-preview .wip-item:first-child:nth-last-child(7) ~ div:nth-last-of-type(-n+3) {
@@ -2174,7 +2166,7 @@ body.login-content:before {
 }
 
 .wall-img-preview .wip-item:first-child:nth-last-child(7),
-.wall-img-preview .wip-item:first-child:nth-last-child(7) ~ div:not( :nth-last-of-type(-n+3)),
+.wall-img-preview .wip-item:first-child:nth-last-child(7) ~ div:not(:nth-last-of-type(-n+3)),
 .wall-img-preview .wip-item:first-child:nth-last-child(n+8),
 .wall-img-preview .wip-item:first-child:nth-last-child(n+8) ~ div {
   width: 25%;
@@ -2186,6 +2178,7 @@ body.login-content:before {
   width: 100%;
   padding-bottom: 50%;
 }
+
 
 /*
  * For header type 1 only
@@ -2206,7 +2199,9 @@ body.login-content:before {
   margin: 2px 5px;
 }
 
+
 /* ----------------------------- End header type 1 ------------------------------------- */
+
 
 /*
  * For header type 2 only
@@ -2304,7 +2299,9 @@ body.login-content:before {
   transform: scale(1) rotate(0deg);
 }
 
+
 /* ----------------------------- End header type 2 ------------------------------------- */
+
 
 /*
  * Do not remove these
@@ -2547,7 +2544,7 @@ body.login-content:before {
 }
 
 .plc-path {
-  stroke-dasharray: 1,200;
+  stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
   stroke-width: 2;
@@ -2563,50 +2560,45 @@ body.login-content:before {
 
 @keyframes dash {
   0% {
-    stroke-dasharray: 1,200;
+    stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
-
   50% {
-    stroke-dasharray: 89,200;
+    stroke-dasharray: 89, 200;
     stroke-dashoffset: -35px;
   }
-
   100% {
-    stroke-dasharray: 89,200;
+    stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
   }
 }
 
 @keyframes color {
-  100%, 0% {
+  100%,
+  0% {
     stroke: #f44336;
   }
-
   40% {
     stroke: #2196f3;
   }
-
   66% {
     stroke: #4caf50;
   }
-
-  80%, 90% {
+  80%,
+  90% {
     stroke: #ffc107;
   }
 }
 
 @media print {
-@page {
+  @page {
     margin: 0;
     size: auto;
-}
-
+  }
   body {
     margin: 0mm 0mm 0mm 0mm !important;
     padding: 0mm !important;
   }
-
   #header,
   #footer,
   #sidebar,
@@ -2615,31 +2607,27 @@ body.login-content:before {
   .m-btn {
     display: none !important;
   }
-
   /*
      * INVOICE
      */
-
   .invoice {
     padding: 30px !important;
     -webkit-print-color-adjust: exact !important;
   }
-
   .invoice .card-header {
     background: #eee !important;
     padding: 20px;
     margin-bottom: 20px;
     margin: -60px -30px 25px -30px;
   }
-
   .invoice .block-header {
     display: none;
   }
-
   .invoice .highlight {
     background: #eee !important;
   }
 }
+
 
 /*
  * Vendor Overrides
@@ -2711,7 +2699,12 @@ body.login-content:before {
   background-image: url("../img/icons/play.png");
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-play button {
     background-image: url("../img/icons/play%402x.png");
     background-size: 15px 15px;
@@ -2722,7 +2715,12 @@ body.login-content:before {
   background-image: url("../img/icons/pause.png");
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-pause button {
     background-image: url("../img/icons/pause%402x.png");
     background-size: 15px 15px;
@@ -2733,7 +2731,12 @@ body.login-content:before {
   background-image: url("../img/icons/speaker.png");
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-mute button {
     background-image: url("../img/icons/speaker%402x.png");
     background-size: 15px 15px;
@@ -2744,7 +2747,12 @@ body.login-content:before {
   background-image: url("../img/icons/speaker-2.png");
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-unmute button {
     background-image: url("../img/icons/speaker-2%402x.png");
     background-size: 15px 15px;
@@ -2760,12 +2768,18 @@ body.login-content:before {
   background-image: url("../img/icons/fullscreen.png");
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .mejs-container .mejs-controls .mejs-fullscreen-button button {
     background-image: url("../img/icons/fullscreen%402x.png");
     background-size: 15px 15px;
   }
 }
+
 
 /** CALENDAR WIDGET **/
 
@@ -2860,7 +2874,6 @@ body.login-content:before {
   #calendar .fc-toolbar {
     height: 200px;
   }
-
   #calendar .fc-toolbar .fc-center {
     margin-top: 138px;
   }
@@ -2988,6 +3001,7 @@ div.fc-row {
 .fc-today {
   color: #ffc107 !important;
 }
+
 
 /* Even Tag Color */
 
@@ -3139,7 +3153,12 @@ hr.fc-divider {
   background-position: right 12px;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
   .chosen-container-single .chosen-single div b {
     background-image: url("../img/select%402x.png");
     background-size: 12px 12px;
@@ -3758,7 +3777,16 @@ select.chosen {
 .fileinput .fileinput-preview img {
   display: inline-block;
   vertical-align: middle;
-  margin-top: -13px;
+}
+
+.fileinput .fileinput-preview.size-640 img {
+  width: 648px;
+  height: auto;
+}
+
+.fileinput .fileinput-preview.size-640 img {
+  width: 100%;
+  height: auto;
 }
 
 .fileinput .fileinput-preview:after {
@@ -3903,13 +3931,11 @@ select.chosen {
     transform: scale(0.1);
     opacity: 1;
   }
-
   70% {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0.7;
   }
-
   100% {
     opacity: 0.0;
   }
@@ -3921,13 +3947,11 @@ select.chosen {
     transform: scale(0.1);
     opacity: 1;
   }
-
   70% {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0.7;
   }
-
   100% {
     opacity: 0.0;
   }

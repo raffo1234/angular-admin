@@ -10,6 +10,7 @@ materialAdmin
     .then(
       function(result) {
         self.data = result[0];
+        // console.log(self.data);
       },
       function(error) {
         console.log(error.statusText);
@@ -17,8 +18,8 @@ materialAdmin
     );
 
   $scope.editar = function(data) {
-    console.log(data);
-    console.dir(data);
+    // console.log(data);
+    // console.dir(data);
     newEditService.getData(data, self.lang, self.id)
       .then(
         function(result) {

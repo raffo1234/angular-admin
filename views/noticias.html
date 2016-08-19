@@ -32,6 +32,9 @@
         <div class="card-body">
           <table ng-table="vm.tablenews" class="table table-striped table-vmiddle" show-filter="true">
             <tr ng-repeat="item in $data">
+              <td title="Imagen" data-title="'Imagen'">
+                <img ng-src="{{ item.image }}" width="100" alt="{{ item.title }}">
+              </td>
               <td title="Título" data-title="'Título'" filter="{ 'title': 'text' }">
                 {{item.title}}</td>
               <td title="Fecha" data-title="'Fecha de la noticias (se muestra en el app)'" filter="{ 'date': 'text' }">
@@ -40,8 +43,6 @@
                 {{item.date_created}}</td>
               <td title="'Fecha de modificación'" data-title="'Fecha de modificación'" filter="{ 'lastModified': 'text' }">
                 {{item.lastModified}}</td>
-              <td title="'Eliminado'" data-title="'Eliminado'" filter="{ 'deleted': 'text' }">
-                {{item.deleted}}</td>
               <td title="'Acciones'">
                 <ul class="top-menu ">
                   <li class="dropdown" uib-dropdown>
