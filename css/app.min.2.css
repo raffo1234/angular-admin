@@ -3779,7 +3779,7 @@ select.chosen {
   vertical-align: middle;
 }
 
-.fileinput .fileinput-preview.size-640 img {
+.fileinput .fileinput-preview.size-640{
   width: 648px;
   height: auto;
 }
