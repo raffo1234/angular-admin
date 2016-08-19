@@ -5,5 +5,5 @@ materialAdmin
 	// 'url': "http://igospa.dhdinc.info/api/v1/"
 
 	// LOCALHOST
-	'url': "http://localhost:8080/igospa/api/v1/"
+	'url': "http://localhost/igospa/api/v1/"
 })
