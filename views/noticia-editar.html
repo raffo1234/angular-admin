@@ -75,7 +75,9 @@
                         <br>
                         <p class="f-500 c-black m-b-20">Imagen, dimensiones (640x480)px</p>
                         <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                            <div class="fileinput-preview thumbnail" data-trigger="fileinput">
+                                <img ng-src="{{ vm.data.image }}">
+                            </div>
                             <div>
                                 <span class="btn btn-info btn-file">
                                     <span class="fileinput-new">Select image</span>

@@ -1,139 +1,152 @@
 materialAdmin
-    .config(function ($stateProvider, $urlRouterProvider){
+    .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
 
         $stateProvider
 
-            //------------------------------
-            // LOGIN
-            //------------------------------
+        //------------------------------
+        // LOGIN
+        //------------------------------
 
 
 
-            //------------------------------
-            // HOME
-            //------------------------------
+        //------------------------------
+        // HOME
+        //------------------------------
 
-            .state ('home', {
-                url: '/home',
-                templateUrl: 'views/home.html'
-            })
+            .state('home', {
+            url: '/home',
+            templateUrl: 'views/home.html'
+        })
 
-            //------------------------------
-            // HEADERS
-            //------------------------------
-            .state ('headers', {
-                url: '/headers',
-                templateUrl: 'views/common-2.html'
-            })
+        //------------------------------
+        // HEADERS
+        //------------------------------
+        .state('headers', {
+            url: '/headers',
+            templateUrl: 'views/common-2.html'
+        })
 
-            .state('headers.textual-menu', {
-                url: '/textual-menu',
-                templateUrl: 'views/textual-menu.html'
-            })
+        .state('headers.textual-menu', {
+            url: '/textual-menu',
+            templateUrl: 'views/textual-menu.html'
+        })
 
-            .state('headers.image-logo', {
-                url: '/image-logo',
-                templateUrl: 'views/image-logo.html'
-            })
+        .state('headers.image-logo', {
+            url: '/image-logo',
+            templateUrl: 'views/image-logo.html'
+        })
 
-            .state('headers.mainmenu-on-top', {
-                url: '/mainmenu-on-top',
-                templateUrl: 'views/mainmenu-on-top.html'
-            })
+        .state('headers.mainmenu-on-top', {
+            url: '/mainmenu-on-top',
+            templateUrl: 'views/mainmenu-on-top.html'
+        })
 
 
 
-            //------------------------------
-            // MENSAJES
-            //------------------------------
+        //------------------------------
+        // MENSAJES
+        //------------------------------
 
-            .state ('mensajes', {
+        .state('mensajes', {
                 url: '/mensajes',
                 templateUrl: 'views/common-2.html'
             })
-            .state ('mensajes.mensajes', {
+            .state('mensajes.mensajes', {
                 url: '/mensajes/:lang',
                 templateUrl: 'views/mensajes.html'
             })
-            .state ('mensajes.editar', {
+            .state('mensajes.editar', {
                 url: '/editar/:lang/:id',
                 templateUrl: 'views/mensaje-editar.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
-                        return $ocLazyLoad.load ([
-                            {
-                                name: 'css',
-                                insertBefore: '#app-level',
-                                files: [                                    
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'                                    
-                                ]
-                            },
-                            {
-                                name: 'vendors',
-                                files: [
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-                                    'vendors/fileinput/fileinput.min.js'
-                                    
-                                ]
-                            }
-                        ])
+                        return $ocLazyLoad.load([{
+                            name: 'css',
+                            insertBefore: '#app-level',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                            ]
+                        }, {
+                            name: 'vendors',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                'vendors/fileinput/fileinput.min.js'
+                            ]
+                        }])
                     }
                 }
             })
 
 
 
-            //------------------------------
-            // NOTICIAS
-            //------------------------------
+        //------------------------------
+        // NOTICIAS
+        //------------------------------
 
-            .state ('noticias', {
+        .state('noticias', {
                 url: '/noticias',
-                templateUrl: 'views/common-2.html'
+                templateUrl: 'views/common-2.html',
+                resolve: {
+                    loadPlugin: function($ocLazyLoad) {
+                        return $ocLazyLoad.load([{
+                            name: 'css',
+                            insertBefore: '#app-level',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                            ]
+                        }, {
+                            name: 'vendors',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                'vendors/fileinput/fileinput.min.js'
+                            ]
+                        }])
+                    }
+                }
             })
-            .state ('noticias.noticias', {
+            .state('noticias.noticias', {
                 url: '/noticia/:lang',
                 templateUrl: 'views/noticias.html'
             })
-            .state ('noticias.editar', {
+            .state('noticias.editar', {
                 url: '/editar/:lang/:id',
                 templateUrl: 'views/noticia-editar.html'
             })
 
 
-            //------------------------------
-            // HISTORIA
-            //------------------------------
+        //------------------------------
+        // HISTORIA
+        //------------------------------
 
-            .state ('historia', {
+        .state('historia', {
                 url: '/historia',
                 templateUrl: 'views/common-2.html'
             })
-            .state ('historia.historia', {
+            .state('historia.historia', {
                 url: '/historia/:lang',
                 templateUrl: 'views/historia.html'
             })
-            .state ('historia.editar', {
+            .state('historia.editar', {
                 url: '/editar/:lang/:id',
                 templateUrl: 'views/historia-editar.html'
             })
 
 
-            //------------------------------
-            // PERSONAS
-            //------------------------------
+        //------------------------------
+        // PERSONAS
+        //------------------------------
 
-            .state ('personas', {
+        .state('personas', {
                 url: '/personas',
                 templateUrl: 'views/common-2.html'
             })
-            .state ('personas.personas', {
+            .state('personas.personas', {
                 url: '/personas/:lang',
                 templateUrl: 'views/personas.html'
             })
-            .state ('personas.editar', {
+            .state('personas.editar', {
                 url: '/editar/:lang/:id',
                 templateUrl: 'views/persona-editar.html'
             })
@@ -141,46 +154,43 @@ materialAdmin
 
 
 
-            //------------------------------
-            // LUGARES
-            //------------------------------
+        //------------------------------
+        // LUGARES
+        //------------------------------
 
-            .state ('lugares', {
+        .state('lugares', {
                 url: '/lugares',
                 templateUrl: 'views/common-2.html'
             })
-            .state ('lugares.lugares', {
+            .state('lugares.lugares', {
                 url: '/lugares/:lang',
                 templateUrl: 'views/lugares.html'
             })
-            .state ('lugares.editar', {
+            .state('lugares.editar', {
                 url: '/editar/:lang/:id',
                 templateUrl: 'views/lugar-editar.html',
                 resolve: {
                     loadPlugin: function($ocLazyLoad) {
-                        return $ocLazyLoad.load ([
-                            {
-                                name: 'css',
-                                insertBefore: '#app-level',
-                                files: [                                    
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'                                    
-                                ]
-                            },
-                            {
-                                name: 'vendors',
-                                files: [
-                                    'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-                                    'vendors/fileinput/fileinput.min.js'
-                                    
-                                ]
-                            }
-                        ])
+                        return $ocLazyLoad.load([{
+                            name: 'css',
+                            insertBefore: '#app-level',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+                            ]
+                        }, {
+                            name: 'vendors',
+                            files: [
+                                'vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+                                'vendors/fileinput/fileinput.min.js'
+
+                            ]
+                        }])
                     }
                 }
             })
 
-            
 
 
-        
+
+
     });
