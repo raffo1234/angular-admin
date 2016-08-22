@@ -16,3 +16,14 @@ materialAdmin
 	}
 }
 ])
+
+.directive('dateformat', function(dateFilter) {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$parsers.push(function(viewValue) {
+        return dateFilter(viewValue, 'yyyy-MM-dd');
+      });
+    }
+  }
+})

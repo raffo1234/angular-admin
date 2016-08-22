@@ -3780,8 +3780,9 @@ select.chosen {
 }
 
 .fileinput .fileinput-preview.size-640{
-  width: 648px;
   height: auto;
+  max-width: 648px;
+  width: 100%;
 }
 
 .fileinput .fileinput-preview.size-640 img {

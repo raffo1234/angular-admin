@@ -9,4 +9,3 @@ var materialAdmin = angular.module('materialAdmin', [
     'ngTable',
     'ui.tinymce'
 ])
- 

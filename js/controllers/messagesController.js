@@ -8,7 +8,6 @@ materialAdmin
     .then(
         function (result) {
             var data = result;
-            
             self.tableMessages = new ngTableParams({
                 page: 1,            // show first page
                 count: 10

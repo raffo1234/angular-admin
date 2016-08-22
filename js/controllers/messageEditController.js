@@ -10,6 +10,7 @@ materialAdmin
     .then(
         function (result) {
             self.data = result[0];
+            console.log(result[0]);
         },
         function (error) {
             console.log(error.statusText);
@@ -50,12 +51,11 @@ materialAdmin
                     swal("Eliminado!", "Elemento elminado", "success"); 
                 },
                 function (error) {
-                    
+
                     swal("Hubo un problema", "Vuelva a intentarlo.", "error"); 
                 }
             );
 
-            
         });
     };
 

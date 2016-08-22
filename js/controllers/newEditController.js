@@ -1,6 +1,6 @@
 materialAdmin
 
-  .controller('newEditCtrl', function(multipartForm, $filter, $timeout, $stateParams, $state, $scope, newGetService, newEditService, ngTableParams, API_URL, httpRequest) {
+  .controller('newEditCtrl', function(multipartForm, API_URL, dateFilter, $filter, $timeout, $stateParams, $state, $scope, newGetService, newEditService, ngTableParams, API_URL, httpRequest) {
 
   var self = this;
   self.lang = $stateParams.lang;
@@ -9,8 +9,9 @@ materialAdmin
   newGetService.getData(self.lang, self.id)
     .then(
       function(result) {
+
+        result[0].image_fullpath = API_URL.url + 'uploads/news/' + result[0]['image'];
         self.data = result[0];
-        // console.log(self.data);
       },
       function(error) {
         console.log(error.statusText);
@@ -18,8 +19,8 @@ materialAdmin
     );
 
   $scope.editar = function(data) {
-    // console.log(data);
-    // console.dir(data);
+    console.log(data);
+    console.dir(data);
     newEditService.getData(data, self.lang, self.id)
       .then(
         function(result) {
@@ -63,7 +64,11 @@ materialAdmin
   };
 
 
+
+
 })
+
+
 
 .service("newGetService", ["$http", "$q", "API_URL", function($http, $q, API_URL) {
   this.getData = function(lang, id) {
@@ -91,6 +96,7 @@ materialAdmin
     for (var key in data) {
       fd.append(key, data[key]);
     }
+    console.log(fd);
     $http.post(url + lang + '/' + id, fd, {
         transformRequest: angular.indentity,
         headers: {

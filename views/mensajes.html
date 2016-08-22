@@ -10,9 +10,7 @@
 
         <div class="container">
             <div class="block-header">
-                
                 <h2>MENSAJES</h2>
-                    
             </div>
 
             <div class="card">
@@ -39,14 +37,14 @@
                 <div class="card-body">
                     <table ng-table="vm.tableMessages" class="table table-striped table-vmiddle" show-filter="true">
                         <tr ng-repeat="item in $data">
+                            <td title="ID" data-title="'ID'" filter="{ 'id': 'text' }">
+                                {{item.id}}</td>
                             <td title="Título" data-title="'Título'" filter="{ 'title': 'text' }">
                                 {{item.title}}</td>
-                            <td title="Año" data-title="'Año'" filter="{ 'year': 'text' }">
-                                {{item.year}}</td>
+                            <td title="Año" data-title="'Fecha del mensaje (SE MUESTRA EN EL APP)'" filter="{ 'date': 'text' }">
+                                {{item.date}}</td>
                             <td title="'Fecha de modificación'" data-title="'Fecha de modificación'" filter="{ 'lastModified': 'text' }">
                                 {{item.lastModified}}</td>
-                            <td title="'Eliminado'" data-title="'Eliminado'" filter="{ 'deleted': 'text' }">
-                                {{item.deleted}}</td>
                             <td title="'Acciones'">
                                 <ul class="top-menu ">
                                     <li class="dropdown" uib-dropdown>
@@ -65,10 +63,10 @@
                                 </ul>
                             </td>
                         </tr>
-                    </table>    
+                    </table>
                 </div>
                 <div class="card-body card-padding">
-                    <button ng-click="agregar()" class="btn btn-primary btn-lg waves-effect">AGREGAR</button>    
+                    <button ng-click="agregar()" class="btn btn-primary btn-lg waves-effect">AGREGAR</button>
                 </div>
             </div>
 

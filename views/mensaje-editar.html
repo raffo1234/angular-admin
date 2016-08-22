@@ -48,16 +48,19 @@
                                 <input type="text" ng-model='vm.data.title' class="form-control input-sm" placeholder="Título">
                             </div>
                         </div>
-                        <br>
-                        <br>
 
-                        <p class="f-500 c-black m-b-20">Año</p>
-                        <div class="form-group">
-                            <div class="fg-line">
-                                <input type="text" ng-model='vm.data.year' class="form-control input-sm" placeholder="Año">
+                        <br>
+                        <br>
+                        <p class="f-500 c-black m-b-20">Fecha del mensaje (Se muestra en el APP)</p>
+                        <div class="form-group" ng-controller="datepickerCtrl">
+
+                            <div class="date-picker input-group" ng-class="{ 'is-opened': opened == true }" style="">
+                                <span class="input-group-addon"><i class="zmdi zmdi-calendar ma-icon"></i></span>
+                                <div class="fg-line" ng-class="{ 'fg-toggled': opened == true }" style="">
+                                    <input ng-click="open($event, 'opened')" type="text" class="form-control"  uib-datepicker-popup="yyyy-MM-dd" show-weeks="false" ng-model="vm.data.date_formatted" dateformat is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder="Fecha de la noticia" required="required">
+                                </div>
                             </div>
                         </div>
-
                         <br>
                         <br>
                         <p class="f-500 c-black m-b-20">Resumen</p>
@@ -69,25 +72,8 @@
                         <br>
                         <br>
 
-                        <!-- <br>
-                        <p class="f-500 c-black m-b-20">Imagen</p>
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
-                            <div>
-                                <span class="btn btn-info btn-file">
-                                    <span class="fileinput-new">Select image</span>
-                                    <span class="fileinput-exists">Change</span>
-                                    <input type="file" name="..." ng-model="vm.data.image">
-                                </span>
-                                <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
-                            </div>
-                        </div>
-                        <br/>
-                        <br/>
-                        <p><em>Imagen previa solo funciona en IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+.</em></p>
-
                         <p class="f-500 c-black m-b-20">Contenido</p>
-                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea> -->
+                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea>
 
                         <br>
                         <br>

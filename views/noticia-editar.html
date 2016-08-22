@@ -48,17 +48,13 @@
                         <br>
                         <br>
                         <p class="f-500 c-black m-b-20">Fecha de la noticia (Se muestra en el APP)</p>
-                        <div class="form-group">
-                            <div class="fg-line">
-                                <input type="text" ng-model='vm.data.date' class="form-control input-sm" placeholder="Fecha de la noticia">
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <p class="f-500 c-black m-b-20">Fecha de creación </p>
-                        <div class="form-group">
-                            <div class="fg-line">
-                                <input type="text" ng-model='vm.data.date_created' class="form-control input-sm" placeholder="Fecha">
+                        <div class="form-group" ng-controller="datepickerCtrl">
+
+                            <div class="date-picker input-group" ng-class="{ 'is-opened': opened == true }" style="">
+                                <span class="input-group-addon"><i class="zmdi zmdi-calendar ma-icon"></i></span>
+                                <div class="fg-line" ng-class="{ 'fg-toggled': opened == true }" style="">
+                                    <input ng-click="open($event, 'opened')" type="text" class="form-control"  uib-datepicker-popup="yyyy-MM-dd" show-weeks="false" ng-model="vm.data.date_formatted" dateformat is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder="Fecha de la noticia" required="required">
+                                </div>
                             </div>
                         </div>
                         <br>
@@ -72,11 +68,17 @@
                         <br>
                         <br>
 
+                        <p class="f-500 c-black m-b-20">Contenido</p>
+                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea>
+
+                        <br>
+                        <br>
                         <br>
                         <p class="f-500 c-black m-b-20">Imagen, dimensiones (640x480)px</p>
+                        <input type="hidden" ng-model="vm.data.image">
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-preview size-640 thumbnail" data-trigger="fileinput">
-                                <img ng-src="{{ vm.data.image }}">
+                                <img ng-src="{{ vm.data.image_fullpath }}">
                             </div>
                             <div>
                                 <span class="btn btn-info btn-file">
@@ -87,16 +89,10 @@
                                 <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
                             </div>
                         </div>
-                        <!-- <input type="file" file-model="vm.data.image" /> -->
-                        <br/>
-                        <br/>
                         <!-- <pre>
                             {{ vm.data | json }}
                         </pre> -->
                         <p><em>Imagen previa solo funciona en IE10+, FF3.6+, Safari6.0+, Chrome6.0+ and Opera11.1+.</em></p>
-
-                        <p class="f-500 c-black m-b-20">Contenido</p>
-                        <textarea ui-tinymce ng-model="vm.data.content" class="form-control" rows="5" placeholder="Contenido"></textarea>
 
                         <br>
                         <br>
