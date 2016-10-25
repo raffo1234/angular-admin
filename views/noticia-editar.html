@@ -39,6 +39,17 @@
                 </div>
                 <div class="card-body card-padding">
                     <form ng-submit="editar(vm.data);">
+                        <p class="f-500 c-black m-b-20">Publicado</p>
+                        <div class="form-group">
+                            <div class="fg-line">
+                                <div class="toggle-switch">
+                                  <input id="tw-switch-{{vm.id}}" type="checkbox" hidden="" ng-model="vm.data.published">
+                                  <label for="tw-switch-{{vm.id}}" class="ts-helper"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
                         <p class="f-500 c-black m-b-20">Título</p>
                         <div class="form-group">
                             <div class="fg-line">

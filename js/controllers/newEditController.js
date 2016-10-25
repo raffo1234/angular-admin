@@ -9,8 +9,9 @@ materialAdmin
   newGetService.getData(self.lang, self.id)
     .then(
       function(result) {
-
+        // console.log("Resultados", result[0].published);
         result[0].image_fullpath = API_URL.url + 'uploads/news/' + result[0]['image'];
+        result[0].published = (result[0].published == "1") ? true : false;
         self.data = result[0];
       },
       function(error) {
@@ -21,6 +22,7 @@ materialAdmin
   $scope.editar = function(data) {
     console.log(data);
     console.dir(data);
+    data.published = (data.published == true) ? "1" : "0";
     newEditService.getData(data, self.lang, self.id)
       .then(
         function(result) {

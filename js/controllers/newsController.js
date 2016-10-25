@@ -9,7 +9,8 @@ materialAdmin
                 function(result) {
                     var data = result;
                     $.map(data, function(n, i) {
-                        return n.image_fullpath = API_URL.url + 'uploads/news/' + n['image'];
+                        n.image_fullpath = API_URL.url + 'uploads/news/' + n['image'];
+                        n.published = (n.published == "0") ? "No publicado" : "Publicado";
                     });
                     // console.log(data);
                     self.tablenews = new ngTableParams({
