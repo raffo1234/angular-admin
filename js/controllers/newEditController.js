@@ -20,13 +20,14 @@ materialAdmin
     );
 
   $scope.editar = function(data) {
-    console.log(data);
-    console.dir(data);
+    // console.log(data);
+    // console.dir(data);
     data.published = (data.published == true) ? "1" : "0";
     newEditService.getData(data, self.lang, self.id)
       .then(
         function(result) {
           console.log(result);
+          $state.reload();
         },
         function(error) {
           console.log(error.statusText);
