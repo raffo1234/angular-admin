@@ -82,9 +82,9 @@ materialAdmin
     .service("newsService", ["$http", "$q", "API_URL", function($http, $q, API_URL) {
         this.getData = function(lang) {
             var defer = $q.defer(),
-                url = API_URL.url + 'news/';
+                url = API_URL.url + 'news/' + lang + '?to_admin=1';
 
-            $http.get(url + lang)
+            $http.get(url)
                 .success(function(data) {
                     defer.resolve(data);
                 })
